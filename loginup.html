@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCraft | Log in / Sign up</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <input type="radio" id="login" name="toggle" checked>
+    <input type="radio" id="signup" name="toggle">
+
+    <!-- Toggle Buttons -->
+    <div class="toggle-btns">
+      <label for="login" class="active" id="login-label">Log in</label>
+      <label for="signup" id="signup-label">Sign up</label>
+    </div>
+
+    <!-- Log in Form -->
+    <form id="login-form" class="form">
+      <h2>Log in to CodeCraft</h2>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" placeholder="Enter your email" required>
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" placeholder="Enter your password" required>
+      <button type="submit">Log in</button>
+      <p class="switch">Don't have an account? <label for="signup" class="link">Sign up</label></p>
+    </form>
+
+    <!-- Sign up Form -->
+    <form id="signup-form" class="form">
+      <h2>Sign up for CodeCraft</h2>
+      <label for="signup-name">Name</label>
+      <input type="text" id="signup-name" placeholder="Enter your name" required>
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email" placeholder="Enter your email" required>
+      <label for="signup-password">Password</label>
+      <input type="password" id="signup-password" placeholder="Create a password" required>
+      <button type="submit">Sign up</button>
+      <p class="switch">Already have an account? <label for="login" class="link">Log in</label></p>
+    </form>
+  </div>
+
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #101820FF;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #282c34;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    /* Hide radio inputs */
+    input[type="radio"] {
+      display: none;
+    }
+
+    .toggle-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .toggle-btns label {
+      background-color: #333333;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      text-align: center;
+      flex: 1;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Active button style */
+    input#login:checked ~ .toggle-btns #login-label,
+    input#signup:checked ~ .toggle-btns #signup-label {
+      background-color: #00ffcc;
+      color: black;
+    }
+
+    .form {
+      display: none;
+      flex-direction: column;
+    }
+
+    /* Show form based on input */
+    input#login:checked ~ #login-form {
+      display: flex;
+    }
+
+    input#signup:checked ~ #signup-form {
+      display: flex;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type="email"], input[type="password"], input[type="text"] {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background-color: #444;
+      color: white;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      padding: 12px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #00e6b8;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .switch .link {
+      color: #00ffcc;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</body>
+</html>
